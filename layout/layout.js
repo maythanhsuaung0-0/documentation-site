@@ -1,19 +1,20 @@
 import React from 'react'
 import Sidebar from '../components/sidebar'
 import OverlaySearchbox from '../components/overlaysearch'
-function Layout({ main, rightSide, openOverlay }) {
+import "@fontsource/inter"; 
+function Layout({openOverlay }) {
 
     return (
-        <section className='lg:pl-10  h-screen  grid grid-cols-1/4'>
+        <section className="h-screen grid grid-cols-[20rem_auto_21rem] font-['Inter']">
             <Sidebar openOverlay={openOverlay} />
-            <main className='grid grid-cols-3/1  overflow-auto lg:px-10'>
-                <div className=' bg-white pt-24   '>
-                    <div className='h-screen'>{main}</div>
-                </div>
-                <div className='relative pt-24'>
-                    <div className=' top-24 fixed'>{rightSide}</div>
+            <main className='bg-red-100 overflow-y-auto'>
+                <div className=' pt-20 px-10'>
+                    hello
                 </div>
             </main>
+            <aside className='overflow-y-auto'>
+                <div className=' pt-20 px-10'>right hand side</div>
+            </aside>
         </section>
     )
 }
