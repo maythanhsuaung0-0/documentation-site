@@ -2,18 +2,12 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { FiSearch } from 'react-icons/fi'
-function Sidebar({openOverlay}){
+function MobileSidebar({closeMobile}){
     return(
-        <aside class="hidden lg:block w-80 overflow-y-auto" aria-label="Sidebar">
-        <div class=" relative py-4 pt-12  px-10 bg-gray-50 rounded dark:bg-gray-800">
-        <div className=' top-0 sticky h-20  bg-white flex flex-col justify-end'>
-        <div onClick={() => openOverlay()} className='w-full bg-white shadow-xl shadow-white  flex flex-row gap-5 cursor-pointer border border-gray-300 hover:border-gray-400 rounded-md px-3 py-2 text-base text-gray-500'>
-            <div className=' self-center text-xl'><FiSearch /></div>
-            <p>Search here...</p>
-         </div>
-         </div>
-        <ul class="space-y-2 pt-8 ">
-       
+        <aside class=" lg:hidden w-[80%] absolute top-0 left-0 z-20 overflow-y-auto" aria-label="Sidebar">
+        <div class=" relative h-screen py-4 px-5 bg-gray-50 rounded dark:bg-gray-800">
+        <ul class="space-y-2 grid">
+        <div className='justify-self-end' onClick={()=>closeMobile()}>close</div>
         <li>
         <div href="#" class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
         <svg class="w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"></path><path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"></path></svg>
@@ -69,4 +63,4 @@ function Sidebar({openOverlay}){
         </aside>
         )
 }
-export default Sidebar
+export default MobileSidebar
